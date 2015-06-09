@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="Win10Poc.Windows.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Poc.Windows"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+            <Button x:Name="Page1Button" Content="SplitView Demo" Tapped="Page1Button_Tapped" HorizontalAlignment="Stretch"></Button>
+            <Button x:Name="Page2Button" Content="RelativePanel Demo" Tapped="Page2Button_Tapped" HorizontalAlignment="Stretch"></Button>
+            <Button x:Name="Page3Button" Content="AdaptiveTrigger Demo" Tapped="Page3Button_Tapped" HorizontalAlignment="Stretch"></Button>
+            <Button x:Name="Page4Button" Content="Adaptive Tile Demo" Tapped="Page4Button_Tapped" HorizontalAlignment="Stretch"></Button>
+            <Button x:Name="Page5Button" Content="Notification Demo" Tapped="Page5Button_Tapped" HorizontalAlignment="Stretch"></Button>
+            <Button x:Name="Page6Button" Content="Calendar Demo" Tapped="Page6Button_Tapped" HorizontalAlignment="Stretch"></Button>
+            
+        </StackPanel>
+    </Grid>
+</Page>

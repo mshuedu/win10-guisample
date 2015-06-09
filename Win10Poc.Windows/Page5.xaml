@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="Win10Poc.Windows.Page5"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Poc.Windows"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnNotif" Content="Értesítés most" Tapped="btnNotif_Tapped" HorizontalAlignment="Stretch"/>
+            <Button x:Name="btnNotifWithButtons" Content="Értesítés gombbal" Tapped="btnNotifWithButtons_Tapped" HorizontalAlignment="Stretch"/>
+            <Button x:Name="btnNotifWithTextBox" Content="Értesítés szövegdobozzal" Tapped="btnNotifWithTextBox_Tapped" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+        <Button x:Name="BackButton" Content="Vissza" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20" Tapped="BackButton_Tapped"></Button>
+    </Grid>
+</Page>
