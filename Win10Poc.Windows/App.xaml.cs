@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -41,6 +42,27 @@ namespace Win10Poc.Windows
             this.Suspending += OnSuspending;
         }
 
+        protected override async void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+            if (args.Kind == ActivationKind.ToastNotification)
+            {
+                var typedArgs = args as ToastNotificationActivatedEventArgs;
+                if (typedArgs.Argument == "cat-cute")
+                {
+                    await (new MessageDialog("You voted that this cat is cute!")).ShowAsync();
+                }
+                else if (typedArgs.Argument == "cat-ugly")
+                {
+                    await (new MessageDialog("You voted that this cat is ugly!")).ShowAsync();
+                }
+                else if (typedArgs.Argument == "cat-opinion")
+                {
+                    await (new MessageDialog($"Your opinion about this cat: {typedArgs.UserInput["message"]}")).ShowAsync();
+                }
+            }
+        }
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
@@ -49,12 +71,12 @@ namespace Win10Poc.Windows
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
-//#if DEBUG
-//            if (System.Diagnostics.Debugger.IsAttached)
-//            {
-//                this.DebugSettings.EnableFrameRateCounter = true;
-//            }
-//#endif
+            //#if DEBUG
+            //            if (System.Diagnostics.Debugger.IsAttached)
+            //            {
+            //                this.DebugSettings.EnableFrameRateCounter = true;
+            //            }
+            //#endif
 
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -86,6 +108,7 @@ namespace Win10Poc.Windows
             // Ensure the current window is active
             Window.Current.Activate();
         }
+
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails

@@ -62,11 +62,9 @@ namespace Win10Poc.Windows
             var content = @"<toast>
                               <visual>
                                 <binding template='ToastGeneric'>
-                                  <image placement='appLogoOverride' src='http://www.lairweb.org.nz/tiger/andeanmountaincat.jpg' />
-                                  <text>Torrance Shum</text>
-                                  <text>Media content attached.</text>
+                                  <text>Cat Cuteness Competition</text>
+                                  <text>Check out this kitten!</text>
                                   <image placement='inline' src='http://2.bp.blogspot.com/_6rROSHI_zZ4/SfY4yPxlHFI/AAAAAAAABpY/0iPyrZOreHc/S220/cat_avatar_0065_www.free-avatars.com.jpg' />
-                                  <text>Hey check out this photo. Isn’t it awesome?</text>
                                 </binding>
                               </visual>
                             </toast>";
@@ -82,16 +80,14 @@ namespace Win10Poc.Windows
             var content = @"<toast>
                               <visual>
                                 <binding template='ToastGeneric'>
-                                  <image placement='appLogoOverride' src='http://www.lairweb.org.nz/tiger/andeanmountaincat.jpg' />
-                                  <text>Torrance Shum</text>
-                                  <text>Media content attached.</text>
+                                  <text>Cat Cuteness Competition</text>
+                                  <text>Please rate our cat!</text>
                                   <image placement='inline' src='http://2.bp.blogspot.com/_6rROSHI_zZ4/SfY4yPxlHFI/AAAAAAAABpY/0iPyrZOreHc/S220/cat_avatar_0065_www.free-avatars.com.jpg' />
-                                  <text>Hey check out this photo. Isn’t it awesome?</text>
                                 </binding>
                               </visual>
                               <actions>
-                                <action activationType='system' arguments='snooze'  content='' />
-                                <action activationType='system' arguments='dismiss' content='' />
+                                <action activationType='foreground' arguments='cat-cute' content='Cute' />
+                                <action activationType='foreground' arguments='cat-ugly' content='Ugly' />
                               </actions>
                             </toast>";
             var xmldoc = new XmlDocument();
@@ -106,16 +102,14 @@ namespace Win10Poc.Windows
             var content = @"<toast>
                               <visual>
                                 <binding template='ToastGeneric'>
-                                  <image placement='appLogoOverride' src='http://www.lairweb.org.nz/tiger/andeanmountaincat.jpg' />
-                                  <text>Torrance Shum</text>
-                                  <text>Media content attached.</text>
+                                  <text>Cat Cuteness Competition</text>
+                                  <text>What is your opinion of this cat?</text>
                                   <image placement='inline' src='http://2.bp.blogspot.com/_6rROSHI_zZ4/SfY4yPxlHFI/AAAAAAAABpY/0iPyrZOreHc/S220/cat_avatar_0065_www.free-avatars.com.jpg' />
-                                  <text>Hey check out this photo. Isn’t it awesome?</text>
                                 </binding>
                               </visual>
                               <actions>
-                                <input id='1' type='text' />
-                                <action activationType='background' arguments='quickReply' hint-inputId='1' content='' imageUri='http://images.clipartof.com/thumbnails/1083261-Clipart-3d-Blue-Send-Button-Royalty-Free-CGI-Illustration.jpg' />
+                                <input id='message' type='text' placeholderContent='I find this cat...' />
+                                <action activationType='foreground' content='Send' arguments='cat-opinion' />
                               </actions>     
                             </toast>";
             var xmldoc = new XmlDocument();
