@@ -70,6 +70,8 @@ namespace Win10Poc.Windows
                 new Uri("ms-appx:///Assets/WideLogo.png"),
                 TileSize.Wide310x150);
             await tile.RequestCreateAsync();
+            tile.VisualElements.Square150x150Logo = new Uri("ms-appx:///Assets/Logo.png");
+            tile.VisualElements.Wide310x150Logo = new Uri("ms-appx:///Assets/WideLogo.png");
         }
 
         private void UpdateTileButton_Tapped(object sender, TappedRoutedEventArgs e)
