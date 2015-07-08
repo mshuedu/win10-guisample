@@ -7,14 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win10Poc.Windows", "Win10Po
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Debug|ARM.ActiveCfg = Debug|ARM
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Debug|ARM.Build.0 = Debug|ARM
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -24,6 +27,7 @@ Global
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Debug|x86.ActiveCfg = Debug|x86
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Debug|x86.Build.0 = Debug|x86
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Debug|x86.Deploy.0 = Debug|x86
+		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Release|Any CPU.ActiveCfg = Release|x86
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Release|ARM.ActiveCfg = Release|ARM
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Release|ARM.Build.0 = Release|ARM
 		{F8A250F9-E27A-46A3-8455-516DD34F06B0}.Release|ARM.Deploy.0 = Release|ARM
@@ -36,14 +40,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://infoframe.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Win10Poc.Windows\\Win10Poc.Windows.csproj
-		SccProjectName1 = Win10Poc.Windows
-		SccLocalPath1 = Win10Poc.Windows
 	EndGlobalSection
 EndGlobal

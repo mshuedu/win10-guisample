@@ -30,24 +30,22 @@ namespace Win10Poc.Windows
 
             AppointmentCalendar calendar;
             var calendars = await store.FindAppointmentCalendarsAsync();
-            if (!calendars.Any(i => i.DisplayName == "Órarend"))
+            if (!calendars.Any(i => i.DisplayName == "SampleCalendar"))
             {
-                calendar = await store.CreateAppointmentCalendarAsync("Órarend");
+                calendar = await store.CreateAppointmentCalendarAsync("SampleCalendar");
             }
             else
             {
-                calendar = calendars.First(i => i.DisplayName == "Órarend");
+                calendar = calendars.First(i => i.DisplayName == "SampleCalendar");
             }
 
             await calendar.SaveAppointmentAsync(
                 new Appointment()
                 {
-                    Subject = "Szereti a tik a meggyet",
+                    Subject = "SampleEvent",
                     StartTime = DateTime.Now,
                     Duration = TimeSpan.FromHours(1)
                 });
-
-            // Működni működik, de a Calendar app még nem jeleníti meg az ilyen app-specifikus naptárakat (mint ahogy azt a WP8.1 verzió tette).
 
             base.OnNavigatedTo(e);
         }

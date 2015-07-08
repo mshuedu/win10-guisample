@@ -8,6 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">A sample calendar item has been written into an app-specific calendar. Open the Windows 10 Calendar app to test.</TextBlock>
     </Grid>
 </Page>
