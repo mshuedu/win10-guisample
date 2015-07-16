@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="Win10Poc.Windows.Page6AppCalendar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Poc.Windows"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,00,20,00">
+            <Button x:Name="CreateCalendarButton" Content="Create App Calendar" HorizontalAlignment="Stretch" Tapped="CreateCalendarButton_Tapped"/>
+            <Button x:Name="AddEventButton" Content="Add Event to App Calendar" HorizontalAlignment="Stretch" Tapped="AddEventButton_Tapped"/>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">Open the Windows 10 Calendar app to view the results of this demo.</TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

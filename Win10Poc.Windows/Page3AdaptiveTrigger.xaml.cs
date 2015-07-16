@@ -18,25 +18,22 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Win10Poc.Windows
 {
-    public sealed partial class Page3 : Page
+    public sealed partial class Page3RelativePanel : Page
     {
-        public Page3()
+        public Page3RelativePanel()
         {
             this.InitializeComponent();
             Window.Current.SizeChanged += Current_SizeChanged;
-        }
-
-        private void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
-        {
-            Debug.WriteLine($"Window Width: {e.Size.Width} | Window Height: {e.Size.Height}");
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons")) BackButton.Visibility = Visibility.Collapsed;
-
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            {
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            }
             SystemNavigationManager.GetForCurrentView().BackRequested += Page3_BackRequested;
         }
 
@@ -52,9 +49,9 @@ namespace Win10Poc.Windows
             e.Handled = true;
         }
 
-        private void BackButton_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
         {
-            if (Frame.CanGoBack) Frame.GoBack();
+            Debug.WriteLine($"Window Width: {e.Size.Width} | Window Height: {e.Size.Height}");
         }
     }
 }

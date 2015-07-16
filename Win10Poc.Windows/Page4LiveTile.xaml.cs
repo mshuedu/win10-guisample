@@ -26,11 +26,11 @@ namespace Win10Poc.Windows
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Page4 : Page
+    public sealed partial class Page4LiveTile : Page
     {
         private const string tileId = "w10poc-secondary-tile";
 
-        public Page4()
+        public Page4LiveTile()
         {
             this.InitializeComponent();
         }
@@ -39,8 +39,10 @@ namespace Win10Poc.Windows
         {
             base.OnNavigatedTo(e);
 
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons")) BackButton.Visibility = Visibility.Collapsed;
-
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            {
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            }
             SystemNavigationManager.GetForCurrentView().BackRequested += Page4_BackRequested;
         }
 
@@ -54,11 +56,6 @@ namespace Win10Poc.Windows
         {
             Frame.GoBack();
             e.Handled = true;
-        }
-
-        private void BackButton_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (Frame.CanGoBack) Frame.GoBack();
         }
 
         private async void PinTileButton_Tapped(object sender, TappedRoutedEventArgs e)

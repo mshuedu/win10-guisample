@@ -17,9 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Win10Poc.Windows
 {
-    public sealed partial class Page2 : Page
+    public sealed partial class Page2RelativePanel : Page
     {
-        public Page2()
+        public Page2RelativePanel()
         {
             this.InitializeComponent();
         }
@@ -28,8 +28,10 @@ namespace Win10Poc.Windows
         {
             base.OnNavigatedTo(e);
 
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons")) BackButton.Visibility = Visibility.Collapsed;
-
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            {
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            }
             SystemNavigationManager.GetForCurrentView().BackRequested += Page2_BackRequested;
         }
 
@@ -136,11 +138,6 @@ namespace Win10Poc.Windows
             grid.SetValue(RelativePanel.BelowProperty, null);
             grid.SetValue(RelativePanel.RightOfProperty, null);
             grid.SetValue(RelativePanel.LeftOfProperty, null);
-        }
-
-        private void BackButton_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (Frame.CanGoBack) Frame.GoBack();
         }
     }
 }

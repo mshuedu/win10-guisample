@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Win10Poc.Windows.Page2"
+    x:Class="Win10Poc.Windows.Page2RelativePanel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Win10Poc.Windows"
@@ -24,6 +24,5 @@
             <Grid x:Name="RedGrid" Width="150" Height="150" Background="Red"></Grid>
             <Grid x:Name="GreenGrid" Width="200" Height="100" Background="Green"></Grid>
         </RelativePanel>
-        <Button x:Name="BackButton" Content="Vissza" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20" Tapped="BackButton_Tapped" Grid.RowSpan="3"></Button>
     </Grid>
 </Page>

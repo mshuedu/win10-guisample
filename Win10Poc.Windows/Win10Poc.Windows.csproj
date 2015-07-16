@@ -98,23 +98,23 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
+    <Compile Include="Page1SplitView.xaml.cs">
+      <DependentUpon>Page1SplitView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page2.xaml.cs">
-      <DependentUpon>Page2.xaml</DependentUpon>
+    <Compile Include="Page2RelativePanel.xaml.cs">
+      <DependentUpon>Page2RelativePanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page3.xaml.cs">
-      <DependentUpon>Page3.xaml</DependentUpon>
+    <Compile Include="Page3AdaptiveTrigger.xaml.cs">
+      <DependentUpon>Page3AdaptiveTrigger.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page4.xaml.cs">
-      <DependentUpon>Page4.xaml</DependentUpon>
+    <Compile Include="Page4LiveTile.xaml.cs">
+      <DependentUpon>Page4LiveTile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page5.xaml.cs">
-      <DependentUpon>Page5.xaml</DependentUpon>
+    <Compile Include="Page5ActionCenter.xaml.cs">
+      <DependentUpon>Page5ActionCenter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page6.xaml.cs">
-      <DependentUpon>Page6.xaml</DependentUpon>
+    <Compile Include="Page6AppCalendar.xaml.cs">
+      <DependentUpon>Page6AppCalendar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartPage.xaml.cs">
@@ -142,27 +142,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Page1.xaml">
+    <Page Include="Page1SplitView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page2.xaml">
+    <Page Include="Page2RelativePanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page3.xaml">
+    <Page Include="Page3AdaptiveTrigger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page4.xaml">
+    <Page Include="Page4LiveTile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page5.xaml">
+    <Page Include="Page5ActionCenter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page6.xaml">
+    <Page Include="Page6AppCalendar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

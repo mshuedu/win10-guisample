@@ -8,9 +8,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Win10Poc.Windows
 {
-    public sealed partial class Page1 : Page
+    public sealed partial class Page1SplitView : Page
     {
-        public Page1()
+        public Page1SplitView()
         {
             this.InitializeComponent();
         }
@@ -19,8 +19,10 @@ namespace Win10Poc.Windows
         {
             base.OnNavigatedTo(e);
 
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons")) BackButton.Visibility = Visibility.Collapsed;
-
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            {
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            }
             SystemNavigationManager.GetForCurrentView().BackRequested += Page1_BackRequested;
         }
 
@@ -34,11 +36,6 @@ namespace Win10Poc.Windows
         {
             Frame.GoBack();
             e.Handled = true;
-        }
-
-        private void BackButton_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (Frame.CanGoBack) Frame.GoBack();
         }
 
         private void CompactOverlayButton_Tapped(object sender, TappedRoutedEventArgs e)
